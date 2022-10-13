@@ -6,7 +6,7 @@ from urllib.error import URLError
 
 
 streamlit.title('My Parents New Healthy Diner')
-streamlit.stop()
+
 streamlit.header('Breakfast Favorites')
 streamlit.text('🥣Omega 3 & Bluebarry Oatmeal')
 streamlit.text('🥗Kale, Spinach & Rocket Smoothie')
@@ -55,6 +55,7 @@ if streamlit.button('Get Fruit Load List'):
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
   
+streamlit.stop()
 #Allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor as my_cur:
