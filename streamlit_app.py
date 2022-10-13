@@ -13,7 +13,7 @@ streamlit.text('🥗Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞Avocado Toast')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
-
+streamlit.stop()
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 # Let's put a pick list here so they can pick the fruit they want to include 
@@ -55,7 +55,6 @@ if streamlit.button('Get Fruit Load List'):
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
   
-streamlit.stop()
 #Allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor as my_cur:
